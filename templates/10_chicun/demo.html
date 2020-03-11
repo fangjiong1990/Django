@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
+    <script>
+        $(function () {
+
+            //width() 方法设置或返回元素的宽度（不包括内边距、边框或外边距）。
+            //height() 方法设置或返回元素的高度（不包括内边距、边框或外边距）。
+            $("#b1").click(function () {
+                var txt ="";
+                txt += "div的宽度："+ $("#d1").width() + "<br>";
+                txt += "div的高度："+ $("#d1").height() + "<br>";
+                txt += "div的宽度，包含内边距："+ $("#d1").innerWidth() + "<br>";
+                txt += "div的高度，包含内边距：" +$("#d1").innerHeight();
+                txt += "div的宽度，包含内边距和边框："+ $("#d1").outerWidth() + "<br>";
+                txt += "div的高度，包含内边距和边框："+ $("#d1").outerHeight();
+                $("#d1").html(txt);
+            })
+        })
+    </script>
+</head>
+<body>
+
+<div id="d1" style="height: 100px;width: 300px;padding: 10px;margin:3px;border: 1px solid black;background-color: lightblue;"></div>
+<br>
+<button id="b1">显示div元素尺寸</button>
+<p>width()-返回元素的宽度</p>
+<p>height()-返回元素的高度</p>
+
+<p>innerWidth() - 返回元素的宽度 (包含内边距)。</p>
+<p>innerHeight() - 返回元素的高度 (包含内边距)。</p>
+</body>
+</html>

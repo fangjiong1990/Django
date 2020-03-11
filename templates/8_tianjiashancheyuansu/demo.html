@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
+    <script>
+        //append()在被选元素的结尾插入内容
+        //prepend()在被选元素的开头插入内容
+        $(function () {
+            $("#b1").click(function () {
+                $("#p1").append("<b>追加文本。</b>");
+            })
+            $("#b2").click(function () {
+                $("ol").append("<li>追加列表项</li>");
+            })
+            $("#b3").click(function () {
+                $("#p1").prepend("<b>在开头追加文本。</b>");
+            })
+            $("#b4").click(function () {
+                $("ol").prepend("<li>在开头追加列表项</li>");
+            })
+            //after()在被选元素的结尾插入内容
+            //before()在被选元素的开头插入内容
+            $("#b5").click(function () {
+                $("#p1").before("<b>在开头追加文本。</b>");
+            })
+            $("#b6").click(function () {
+                $("#p1").after("<b>在之后追加文本。</b>");
+            })
+            //remove()删除被选元素和子元素
+            //empty()删除被选元素
+            $("#b7").click(function () {
+                $("#d1").remove();
+            })
+            $("#b8").click(function () {
+                $("#d1").empty();
+            })
+            $("#b9").click(function () {
+                $("p").remove("#p1");
+            })
+        })
+        function appendText() {
+            var txt1 = "<p>文本</p>";// 使用 HTML 标签创建文本
+            var txt2 = $("<p></p>").text("文本");// 使用 jQuery 创建文本
+            var txt3 = document.createElement("p").innerHTML = "文本";// 使用 DOM 创建文本
+            $("body").append(txt1,txt2,txt3);// 追加新元素
+        }
+        function afterText() {
+            var txt1 = "<b>I</b>";
+            var txt2 = $("<i></i>").text("love");
+            var txt3 = document.createElement("p").innerHTML = "you";
+            $("#p1").after(txt1,txt2,txt3);
+        }
+
+
+    </script>
+</head>
+<body>
+
+<div id="d1" style="background-color: burlywood;width: 200px;height: 120px;padding:10px;border: 1px solid black;">
+    <p id="p1">这是一个段落。</p>
+    <p>这是两个段落</p>
+    <p>这是三个段落</p>
+</div>
+<ol>
+    <li>1111</li>
+    <li>2222</li>
+    <li>3333</li>
+</ol>
+<button id="b1">添加文本</button>
+<button id="b2">添加队列</button><br><br>
+<button id="b3">添加文本</button>
+<button id="b4">添加队列</button><br><br>
+<button onclick="appendText()">添加文本</button>
+<button onclick="afterText()">之后添加</button>
+<br><br>
+<button id="b5">添加文本</button>
+<button id="b6">添加文本</button><br><br>
+<button id="b7">删除div元素</button>
+<button id="b8">删除div元素</button>
+<button id="b9">删除div元素</button>
+
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<h1>欢迎来到我的网站</h1>
+
+
+<h1>{{ hello }}</h1>
+
+<form action="/seach_post/" method="post">
+    {% csrf_token %}
+    <input type="text" name="q">
+    <input type="submit" value="post提交">
+</form>
+<p>{{ rlt }}</p>
+
+<form action="/seach_get" method="get">
+    <input type="text" name="q">
+    <input type="submit" value="get提交">
+</form>
+</body>
+</html>

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
+    <script>
+
+        //parent() 方法返回被选元素的直接父元素
+        //parents() 方法返回被选元素的所有祖先元素
+        //parentsUntil() 方法返回介于两个给定元素之间的所有祖先元素
+
+        //children() 方法返回被选元素的所有直接子元素
+        //find() 方法返回被选元素的后代元素
+
+        //next() 方法返回被选元素的下一个同胞元素。
+        //siblings() 方法返回被选元素的所有同胞元素。
+        //nextUntil() 方法返回介于两个给定参数之间的所有跟随的同胞元素
+
+        //prev() 方法返回被选元素的上一个同胞元素。
+        //prevAll方法返回被选元素的所有同胞元素。
+        //prevUntil()方法返回介于两个给定参数之间的所有跟随的同胞元素
+
+        //first() 方法返回被选元素的首个元素。
+        //last() 方法返回被选元素的最后一个元素。
+        //eq() 方法返回被选元素中带有指定索引号的元素。
+        //filter() 方法允许您规定一个标准。不匹配这个标准的元素会被从集合中删除，匹配的元素会被返回。
+        //not() 方法返回不匹配标准的所有元素。
+        $(function () {
+            //$("span").parent().css({"color":"red", "border":"2px solid red"});
+            //$("span").parents("div").css({"color":"yellow", "border":"2px solid blue"});
+            //$("span").parentsUntil("div").css({"color":"green", "border":"2px solid green"});
+            //$("div").children("p#1").css({"color":"red", "border":"2px solid red"});
+            //$("div").find("*").css({"color":"yellow", "border":"2px solid yellow"});
+            //$("h2").siblings("p").css({"color":"red", "border":"2px solid red"});
+            //$("h2").next().css({"color":"red", "border":"2px solid red"});
+            //$("h1").nextAll().css({"color":"red", "border":"2px solid red"});
+            //$("h1").nextUntil("p").css({"color":"red", "border":"2px solid red"});
+            //$("h3").prev().css({"color":"red", "border":"2px solid red"});
+            //$("h3").prevAll().css({"color":"red", "border":"2px solid red"});
+            //$("h3").prevUntil("p").css({"color":"red", "border":"2px solid red"});
+            //$("div div").first().css("background-color", "red");
+            //$("div div").last().css("background-color", "red");
+            //$("div").eq(2).css("background-color", "red");
+            //$("div").filter(".d2").css("background-color", "red");
+            //$("div").not(".d2").css("background-color", "red");
+        })
+    </script>
+    <style>
+        .d1 *
+        {
+            display: block;
+            border: 2px solid lightgrey;
+            color: lightgrey;
+            padding: 5px;
+            margin: 15px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="d1">div(祖先元素)
+    <div class="d2" style="width: 500px">div(曾祖父元素)
+        <ul>ul(祖父元素)
+            <li>li(父元素)
+                <span>span</span>
+            </li>
+        </ul>
+    </div>
+    <div style="width: 500px">
+        <p>p(父元素)
+            <span>spand</span>
+        </p>
+    </div>
+    <div class="d2">
+        <p id="1">p(儿子元素)
+            <span>span(孙子元素)</span>
+        </p>
+        <p id="2">p(儿子元素)
+            <span>span(孙子元素)</span>
+        </p>
+    </div>
+
+    <p>pppp</p>
+    <h1>111</h1>
+    <h2>222</h2>
+    <h3>333</h3>
+    <p>pppp</p>
+</div>
+
+
+
+</body>
+</html>

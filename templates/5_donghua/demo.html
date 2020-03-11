@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
+    <script>
+        $(function () {
+            $("#b0").click(function () {
+                var div=$("#d1");
+                div.animate({left: '100px', width: '200px'}, "slow");
+                div.animate({fontSize:'3em'}, "slow");
+            })
+            $("#b1").click(function () {
+                $("#d1").animate({left:'250px', opacity:'0.5', height:'150px', width:'+=150px'})
+            })
+            $("#b2").click(function () {
+                $("#d1").animate({height: 'toggle'})
+            })
+            $("#b3").click(function () {
+                var div=$("#d1");
+                div.animate({height:'300px', opacity: '0.4'}, "slow");
+                div.animate({width: '300px', opacity: '0.8'}, "slow");
+                div.animate({height:'100px', opacity: '0.4'}, "slow");
+                div.animate({width: '100px', opacity: '0.8'}, "slow");
+            })
+            $("#d2").click(function () {
+                $("#d3").slideToggle(5000);
+            })
+            $("#d4").click(function () {
+                $("#d3").stop();
+            })
+            $("#b4").click(function () {
+                $("#d1").animate({left:'200px', width:'200px'}, 5000);
+                $("#d1").animate({fontSize: '3em'}, 5000);
+            })
+            $("#b5").click(function () {
+                $("#d1").stop();
+            })
+            $("#b6").click(function () {
+                $("#d1").stop(true);
+            })
+            $("#b7").click(function () {
+                $("#d1").stop(true,true);
+            })
+        })
+    </script>
+    <style>
+        #d1
+        {
+            background-color: greenyellow;
+            width: 100px;
+            height: 100px;
+            position: absolute;
+        }
+        #d2,#d3,#d4
+        {
+            background-color: #e5eecc;
+            padding: 5px;
+            width: 50%;
+            margin: 0 auto;
+            border: solid 1px #c3c3c3;
+            text-align: center;
+        }
+        #d3
+        {
+            padding-top: 50px;
+            padding-bottom: 50px;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+<button id="b0">开始动画</button>
+<button id="b1">开始动画</button>
+<button id="b2">开始动画</button>
+<button id="b3">开始队列动画</button>
+<p>默认情况下，所有的 HTML 元素有一个静态的位置，且是不可移动的。
+    如果需要改变为，我们需要将元素的 position 属性设置为 relative, fixed, 或 absolute!</p>
+<button id='b4'>开始动画</button>
+<button id="b5">停止</button>
+<button id="b6">全部停止</button>
+<button id="b7">停止动画完成操作</button>
+<p>点击 "开始" 按钮开始动画。</p>
+<p>点击 "停止" 按钮停止当前激活的动画，但之后我们能再动画队列中再次激活。</p>
+<p>点击 "停止所有" 按钮停止当前动画，并清除动画队列，所以元素的所有动画都会停止。</p>
+<p>点击 "停止动画，但完成动作" 快速完成动作，并停止它。</p>
+<div id="d1">HELLO</div>
+<div id="d2">点我向下/拉起滑动面板</div>
+<div id="d3">HelloWorld!!!</div>
+<div id="d4">点我停止动画</div>
+
+</body>
+</html>

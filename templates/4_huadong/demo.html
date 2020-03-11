@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
+    <script>
+        $(function () {
+            $("#div1").click(function () {
+                $("#div4").slideToggle("fast");
+            })
+            $("#div2").click(function () {
+                $("#div4").slideDown("slow");
+            })
+            $("#div3").click(function () {
+                $("#div4").slideUp("slow");
+            })
+        })
+    </script>
+    <style type="text/css">
+        #div1,#div2,#div3,#div4
+        {
+            padding: 5px;
+            width: 50%;
+            margin: 0 auto;
+            text-align: center;
+            background-color: #e5eecc;
+            border: solid 1px #c3c3c3;
+        }
+        #div4
+        {
+            padding-top: 50px;
+            padding-bottom: 50px;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+<div id="div1">点我显示/隐藏面板</div>
+<div id="div2">点我下滑面板</div>
+<div id="div3">点我拉起面板</div>
+<div id="div4">Hello World!!!</div>
+
+
+</body>
+</html>

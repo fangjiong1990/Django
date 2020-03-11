@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
+    <script>
+        $(function () {
+            $("#b1").click(function () {
+                alert("Text: "+$("#p1").text());
+            })
+            $("#b2").click(function () {
+                alert("HTML:"+$("#p1").html());
+            })
+            $("#b3").click(function () {
+                alert("值为："+$("#test").val());
+            })
+            $("#b4").click(function () {
+                alert("href属性值为："+$("#baidu").attr("href"));
+            })
+
+
+
+
+            $("#b5").click(function () {
+                $("#p1").text("hello world");
+            })
+            $("#b6").click(function () {
+                $("#p2").html("<b>hello world</b>");
+            })
+            $("#b7").click(function () {
+                $("#test").val("www://baidu.com");
+            })
+            $("#b711").click(function () {
+                $("#baidu").attr({"href":"http://www.runoob.com","title":"菜鸟教程"});
+                $("#baidu").html($("#baidu").attr('title'));
+            })
+
+
+
+
+            $("#b8").click(function () {
+                $("#p1").text(function (i, jiutext) {
+                    return "旧文本："+ jiutext +"，新文本：Hello World （index:"+ i + ")";
+                })
+            })
+            $("#b9").click(function () {
+                $("#p2").html(function (i, jiutext) {
+                    return "旧HTML："+ jiutext + ",新HTML：<b>HelloWorld</b>(index:"+i+")";
+                })
+            })
+            $("#b1010").click(function () {
+                $("#baidu").attr("href", function () {
+                    return "http://www.runoob.com";
+                })
+            })
+        })
+    </script>
+</head>
+<body>
+
+<p id="p1">这是段落中的<b>粗体</b>文本</p><br>
+<p id="p2">这是另一个段落</p>
+名称：<input id="test" type="text" value="菜鸟教程"/><br><br>
+<a id="baidu" href="http://baidu.com">百度一下</a><br><br>
+<button id="b1">显示文本</button>
+<button id="b2">显示HTML</button>
+<button id="b3">显示值</button>
+<button id="b4">获取href属性值</button><br><br>
+<button id="b5">设置文本</button>
+<button id="b6">设置HTML</button>
+<button id="b7">设置值</button>
+<button id="b711">设置新链接地址和名称</button><br><br>
+<button id="b8">显示新旧文本</button>
+<button id="b9">显示新旧HTML</button>
+<button id="b1010">改变链接地址</button>
+
+</body>
+</html>

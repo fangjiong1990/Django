@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
+    <script>
+        $(function () {
+            $("#b1").click(function () {
+                $("#d1").load("test.txt p",function (txt,statustxt,xhr) {
+                    if (statustxt == "success")
+                        alert("外部内容加载成功"+ txt);
+                    if (statustxt == "error")
+                        alert("Error:"+xhr.status + ":"+ xhr.statusText)
+                });
+            })
+
+            $("#b2").click(function () {
+                $.get("test.txt", function (data, status) {
+                    alert("数据：" + data + "\n状态：" + status);
+                })
+            })
+
+            $("#b3").click(function () {
+                $.post("test.txt", {name:"菜鸟教程", url:"http://www.runoob.com"}, function (data, status) {
+                    alert("数据：" + data + "\n状态：" + status);
+                })
+
+            })
+        })
+    </script>
+</head>
+<body>
+<div id="d1">使用jQuery AJAX修改文本内容</div>
+<button id="b1">获取外部数据</button>
+<button id="b2">发送一个 HTTP GET 请求并获取返回结果</button>
+<button id="b3">发送一个 HTTP POST 请求页面并获取返回内容</button>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>demo1</title>
+    <script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
+    <script src="my_jquery_function1.js"></script>
+    <style>
+        div.ex
+        {
+            background-color: bisque;
+            padding: 10px;
+            border: solid 1px yellow;
+        }
+    </style>
+</head>
+<body>
+<div style="height: 200px">
+    <p>点我隐藏1111</p>
+    <p>点我隐藏2222</p>
+    <p>点我隐藏3333</p>
+    <p>点我隐藏4444</p>
+</div>
+<button id="hide">隐藏</button>&nbsp;<button id="show">显示</button>
+<button id="hideandshow">隐藏/显示</button>
+
+
+<h3>Google</h3>
+<div class="ex">
+    <button class="hide">点我隐藏</button>
+    <p>站点名: Google<br>站点 URL：http://www.google.com</p>
+</div>
+
+
+<h3>菜鸟驿站</h3>
+<div class="ex">
+    <button class="hide">点我隐藏</button>
+    <p>站点名: 菜鸟教程<br>站点 URL：http://www.runoob.com</p>
+</div>
+<br>
+<div id="div1" style="background-color: bisque;padding: 10px">
+    隐藏及设置回调函数<br>
+    隐藏及设置回调函数<br>
+    隐藏及设置回调函数<br>
+</div>
+<button id="button1">隐藏完成后，弹出提示，因为有回调函数</button>
+<button id="button2">隐藏完成前，弹出提示，因为没有回调函数</button>
+
+
+</body>
+</html>

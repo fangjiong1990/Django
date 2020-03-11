@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
+    <script>
+        $(function () {
+            //addClass() 方法,向不同的元素添加 class 属性
+            $("#b1").click(function () {
+                $("h1,h2,p").addClass("blue1 important");
+                $("div").addClass("important");
+            })
+
+            //removeClass() 方法,在不同的元素中删除指定的 class 属性
+            $("#b2").click(function () {
+                $("h1,h2,p").removeClass("blue1");
+                $("div").removeClass("important");
+            })
+
+            //toggleClass() 方法,对被选元素进行添加/删除类的切换操作
+            $("#b3").click(function () {
+                $("h1,h2,p").toggleClass("blue1");
+            })
+
+            //css("propertyname")返回指定的 CSS 属性的值
+            $("#b4").click(function () {
+                alert("背景颜色=" + $("p").css("background-color"));
+            })
+
+            //css("propertyname","value")设置指定的 CSS 属性
+            $("#b5").click(function () {
+                $("p").css("background-color", "yellow");
+            })
+
+            //css({"propertyname":"value","propertyname":"value",...})设置多个 CSS 属性
+            $("#b6").click(function () {
+                $("p").css({"background-color":"yellow", "font-size":"200%"});
+            })
+
+        })
+    </script>
+    <style type="text/css">
+        .blue1
+        {
+            background-color: yellow;
+            width: 300px;
+        }
+        .important
+        {
+            font-weight: bold;
+            font-size: xx-large;
+        }
+    </style>
+</head>
+<body>
+
+<p style="background-color: red">这是一个段落</p>
+<p style="background-color: green">这是一个段落</p>
+<p style="background-color: blue">这是一个段落</p>
+<button id="b4">返回第一个 p 元素的 background-color</button>
+<button id="b5">设置 p 元素的 background-color</button>
+<button id="b6">为 p 元素设置多个样式</button>
+
+<h1>标题1</h1>
+<h2>标题2</h2>
+<p>这是一个段落</p>
+<p>这是另一个段落</p>
+<div>这是一个div层</div><br>
+<button id="b1">为元素添加class</button>
+
+<h1 class="blue1">标题1</h1>
+<h2 class="blue1">标题2</h2>
+<p class="blue1">这是一个段落</p>
+<p class="blue1">这是另一个段落</p>
+<div class="important">这是一个div层</div><br>
+<button id="b2">为元素删除class</button>
+
+<h1 class="blue1">标题1</h1>
+<h2 class="blue1">标题2</h2>
+<p class="blue1">这是一个段落</p>
+<p>这是另一个段落</p>
+<button id="b3">切换class</button>
+
+
+
+</body>
+</html>
